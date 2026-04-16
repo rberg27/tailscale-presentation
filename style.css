@@ -510,7 +510,7 @@ strong { color: var(--fg); font-weight: 600; }
   html, body { font-size: 15px; overflow-x: hidden; }
 
   .slide { padding: 3vh 5vw; gap: 0.8rem; }
-  .slide.landing { padding: 2vh 4vw 2vh; gap: 0.6rem; }
+  .slide.landing { padding: 1.5vh 4vw 1.5vh; gap: 0.4rem; }
 
   /* Landing */
   .landing-grid {
@@ -522,12 +522,12 @@ strong { color: var(--fg); font-weight: 600; }
     grid-column: 1 / -1;
     grid-row: 2;
   }
-  .hero-shot > img { max-width: 60%; max-height: 100%; }
+  .hero-shot > img { max-width: 50%; max-height: 100%; }
   .corner-tl { grid-column: 1; grid-row: 1; justify-self: start; margin-left: 0; }
   .corner-tr { grid-column: 2; grid-row: 1; justify-self: end; }
   .corner-bl { grid-column: 1; grid-row: 3; justify-self: start; display: flex; }
   .corner-br { grid-column: 2; grid-row: 3; justify-self: end; display: flex; }
-  .logo-chip { width: 140px; height: 70px; padding: 0.5rem; border-radius: 8px; }
+  .logo-chip { width: 120px; height: 55px; padding: 0.4rem; border-radius: 8px; }
   .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
   .landing-sub { font-size: 0.7rem; }
   .landing-footer { font-size: 0.65rem; }
