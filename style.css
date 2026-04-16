@@ -532,7 +532,7 @@ strong { color: var(--fg); font-weight: 600; }
   .grid-footer { grid-column: 1 / -1; grid-row: 3; text-align: center; }
   .corner-bl { grid-column: 1; grid-row: 4; justify-self: start; display: flex; }
   .corner-br { grid-column: 2; grid-row: 4; justify-self: end; display: flex; }
-  .logo-chip { width: 120px; height: 55px; padding: 0.4rem; border-radius: 8px; }
+  .logo-chip { width: 100px; height: 40px; padding: 0.3rem; border-radius: 6px; }
   .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
   .landing-sub { font-size: 0.7rem; }
   .landing-footer { font-size: 0.75rem; }
