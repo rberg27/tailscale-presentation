@@ -514,19 +514,19 @@ strong { color: var(--fg); font-weight: 600; }
   html, body { font-size: 15px; overflow-x: hidden; }
 
   .slide { padding: 3vh 5vw; gap: 0.8rem; }
-  .slide.landing { padding: 1.5vh 4vw 1.5vh; gap: 0.4rem; }
+  .slide.landing { padding: 1vh 4vw 1vh; gap: 0.2rem; }
 
   /* Landing */
   .landing-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr auto auto;
-    gap: 0.5rem;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.3rem;
   }
   .hero-shot {
     grid-column: 1 / -1;
     grid-row: 2;
   }
-  .hero-shot > img { max-width: 65%; max-height: 100%; }
+  .hero-shot > img { max-width: 55%; max-height: 100%; }
   .corner-tl { grid-column: 1; grid-row: 1; justify-self: start; margin-left: 0; }
   .corner-tr { grid-column: 2; grid-row: 1; justify-self: end; }
   .grid-footer { grid-column: 1 / -1; grid-row: 3; text-align: center; }
@@ -535,7 +535,7 @@ strong { color: var(--fg); font-weight: 600; }
   .logo-chip { width: 120px; height: 55px; padding: 0.4rem; border-radius: 8px; }
   .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
   .landing-sub { font-size: 0.7rem; }
-  .landing-footer { font-size: 0.65rem; }
+  .landing-footer { font-size: 0.75rem; }
   .hero-caption { font-size: 0.45rem; }
 
   .name-popup { min-width: 240px; padding: 0.8rem 1rem; }
