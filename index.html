@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meeting the AI Moment — a talk for Tailscale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="deck">
+
+    <!-- 1. Landing -->
+    <section class="slide landing">
+      <div class="landing-header">
+        <div class="eyebrow">Meeting the AI Moment</div>
+        <h1 class="landing-name">
+          <a href="https://www.linkedin.com/in/ryan-bergamini/" target="_blank" class="name-link">
+            Ryan Bergamini
+            <div class="name-popup">
+              <div class="popup-info">
+                <strong>Ryan Bergamini</strong>
+                <span>Duke · US Navy · Johns Hopkins · Wharton</span>
+                <span class="popup-link">View LinkedIn Profile →</span>
+              </div>
+            </div>
+          </a>
+        </h1>
+        <p class="landing-sub">Tailscale Enthusiast · Coding from anywhere</p>
+      </div>
+
+      <div class="landing-grid">
+        <div class="logo-chip corner-tl"><img src="duke_university_logo.jpg" alt="Duke University" /></div>
+        <a href="https://www.worldcampus.psu.edu/penn-state-online-artificial-intelligence-program" target="_blank" class="logo-chip corner-tr"><img src="Johns_Hopkins_Logo.jpg" alt="Johns Hopkins University" /></a>
+        <div class="hero-shot">
+          <img src="doom-coding-hero.png" alt="Doom Coding — coding at a concert from my phone" />
+          <div class="video-overlay">
+            <video src="Doom-coding.mov" controls preload="metadata"></video>
+            <span class="close-video">&times;</span>
+          </div>
+        </div>
+        <a href="https://gail.wharton.upenn.edu/gen-ai-studio/" target="_blank" class="logo-chip corner-bl"><img src="wharton-gail-logo.jpg" alt="Wharton Generative AI Labs" /></a>
+        <div class="logo-chip corner-br"><img src="wharton-logo.jpg" alt="Wharton, University of Pennsylvania" /></div>
+      </div>
+
+      <div class="landing-footer">
+        <strong>#3 on Hacker News</strong> — <a href="https://github.com/rberg27/doom-coding" target="_blank" class="accent" style="text-decoration:none">"Doom Coding"</a>
+        <a href="https://github.com/rberg27/doom-coding" target="_blank" class="mono" style="color:var(--fg-dim);text-decoration:none"> · github.com/rberg27/doom-coding</a>
+      </div>
+    </section>
+
+    <!-- 2. Where AI is Going -->
+    <section class="slide slide-2">
+      <h1 class="slide2-title">Where AI is <span class="accent">Going</span></h1>
+
+      <div class="two-tiles">
+        <div class="tile" data-content="content/no-boundaries.md">
+          <div class="tile-number">01</div>
+          <h2><span class="white">No Boundaries</span><br/><span class="accent">→ New Interfaces</span></h2>
+          <p class="tile-teaser">Intelligence meets us everywhere. Phones, IoT, voice, text — the screen is no longer the limit.</p>
+          <span class="tile-more">Explore →</span>
+        </div>
+
+        <div class="tile" data-content="content/adult-on-the-go.md">
+          <div class="tile-number">02</div>
+          <h2><span class="white">Adult In The Room</span><br/><span class="accent">→ Adult On The Go</span></h2>
+          <p class="tile-teaser">Judgement and taste are the premium. The future is providing that craft without being at your desk.</p>
+          <span class="tile-more">Explore →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Tailscale = Vercel of Local -->
+    <section class="slide slide-3">
+      <div class="slide3-header">
+        <h1>Tailscale = the <span class="accent">Vercel</span> of <span class="accent">Local</span></h1>
+        <div class="three-pillars">
+          <div class="pillar">Simple</div>
+          <div class="pillar">Reliable</div>
+          <div class="pillar">"On-The-Go"</div>
+        </div>
+      </div>
+
+      <div class="slide3-body">
+        <div class="ideas-section">
+          <h3 class="section-label">Ideas to Build</h3>
+          <div class="idea-cards">
+            <div class="idea-card" data-idea="0">
+              <div class="idea-icon">🔗</div>
+              <strong>Quick-Open</strong>
+              <span>Stop copy-pasting your own DNS</span>
+            </div>
+            <div class="idea-card" data-idea="1">
+              <div class="idea-icon">📱</div>
+              <strong>Expo Resolver</strong>
+              <span>Let React Native find your backend</span>
+            </div>
+            <div class="idea-card" data-idea="2">
+              <div class="idea-icon">⚡</div>
+              <strong>Arduino-to-Tailnet</strong>
+              <span>IoT without the networking PhD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="future-section" data-content="content/where-this-goes.md">
+          <h3 class="section-label">The Opportunity</h3>
+          <div class="future-items">
+            <div class="future-item">Own your intelligence</div>
+            <div class="future-item">Tailscale as the Localhost for AI</div>
+            <div class="future-item">The Tailscale Opportunity</div>
+          </div>
+          <span class="tile-more">Read more →</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="overview" class="hidden"></div>
+
+  <script src="deck.js"></script>
+  <script>
+    // Video popup
+    document.querySelector('.hero-shot img')?.addEventListener('click', () => {
+      document.querySelector('.video-overlay').classList.add('active');
+      document.querySelector('.video-overlay video').play();
+    });
+    document.querySelector('.close-video')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const overlay = document.querySelector('.video-overlay');
+      overlay.classList.remove('active');
+      overlay.querySelector('video').pause();
+    });
+
+    // Markdown parser
+    function linkify(text) {
+      return text.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" target="_blank" style="color:var(--accent)">$1</a>'
+      ).replace(
+        /(^|\s)(https?:\/\/\S+)/g,
+        '$1<a href="$2" target="_blank" style="color:var(--accent);word-break:break-all;font-size:0.85em">$2</a>'
+      );
+    }
+
+    function parseMd(md) {
+      const lines = md.split('\n');
+      let intro = '';
+      let items = [];
+      let summary = '';
+      let currentTitle = '';
+      let currentBody = '';
+      let inSummary = false;
+      let pastH1 = false;
+      let inH2 = false;
+
+      for (const line of lines) {
+        if (line.trim() === '---') {
+          if (currentTitle) items.push({ title: currentTitle, body: currentBody.trim() });
+          currentTitle = '';
+          currentBody = '';
+          inSummary = true;
+          inH2 = false;
+          continue;
+        }
+        if (line.startsWith('# ') && !line.startsWith('## ')) {
+          pastH1 = true;
+          continue;
+        }
+        if (line.startsWith('## ')) {
+          if (currentTitle) items.push({ title: currentTitle, body: currentBody.trim() });
+          currentTitle = line.replace('## ', '');
+          currentBody = '';
+          inH2 = true;
+          continue;
+        }
+        if (inSummary) {
+          summary += line + ' ';
+        } else if (inH2) {
+          currentBody += line + '\n';
+        } else if (pastH1 && line.trim()) {
+          intro += line + ' ';
+        }
+      }
+      if (currentTitle && !inSummary) items.push({ title: currentTitle, body: currentBody.trim() });
+
+      let html = '';
+      if (intro.trim()) {
+        html += `<p class="modal-intro">${linkify(intro.trim())}</p>`;
+      }
+      if (items.length) {
+        for (const item of items) {
+          const body = linkify(item.body.replace(/\n\n/g, '</p><p class="modal-para">').replace(/\n/g, ' ').trim());
+          html += `<div class="modal-section"><h3>${item.title}</h3><p class="modal-para">${body}</p></div>`;
+        }
+      }
+      if (summary.trim()) {
+        html += `<div class="modal-summary">${linkify(summary.trim())}</div>`;
+      }
+      return html;
+    }
+
+    // Modal logic
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    const modalClose = document.querySelector('.modal-close');
+
+    function openModal(contentPath) {
+      fetch(contentPath + '?t=' + Date.now())
+        .then(r => r.text())
+        .then(md => {
+          modalBody.innerHTML = parseMd(md);
+          modal.classList.remove('hidden');
+        });
+    }
+
+    modalClose.addEventListener('click', () => modal.classList.add('hidden'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.add('hidden');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+      }
+    });
+
+    // Tile clicks open modal
+    document.querySelectorAll('[data-content]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => openModal(el.dataset.content));
+    });
+
+    // Idea card clicks open modal to specific section
+    document.querySelectorAll('[data-idea]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => openModal('content/build-this-week.md'));
+    });
+  </script>
+</body>
+</html>
