@@ -535,7 +535,7 @@ strong { color: var(--fg); font-weight: 600; }
   .corner-tr { order: 4; }
   .corner-bl { order: 5; display: flex; }
   .corner-br { order: 6; display: flex; }
-  .logo-chip { width: 100px; height: 40px; padding: 0.3rem; border-radius: 6px; }
+  .logo-chip { width: 85vw; height: auto; padding: 0.5rem 1rem; border-radius: 8px; }
   .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
   .landing-sub { font-size: 0.7rem; }
   .landing-footer { font-size: 0.75rem; }
