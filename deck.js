@@ -1,8 +1,6 @@
 (() => {
   const deck = document.getElementById("deck");
   const slides = Array.from(document.querySelectorAll(".slide"));
-  const navLeft = document.getElementById("nav-left");
-  const navRight = document.getElementById("nav-right");
 
   let i = 0;
   const total = slides.length;
@@ -11,11 +9,24 @@
   const fromParam = parseInt(params.get("s") || location.hash.replace("#", ""), 10);
   if (!isNaN(fromParam) && fromParam >= 1 && fromParam <= total) i = fromParam - 1;
 
+  // Create nav arrows
+  const leftArrow = document.createElement("button");
+  leftArrow.className = "nav-arrow nav-left";
+  leftArrow.innerHTML = "&#8249;";
+  leftArrow.addEventListener("click", () => go(i - 1));
+  document.body.appendChild(leftArrow);
+
+  const rightArrow = document.createElement("button");
+  rightArrow.className = "nav-arrow nav-right";
+  rightArrow.innerHTML = "&#8250;";
+  rightArrow.addEventListener("click", () => go(i + 1));
+  document.body.appendChild(rightArrow);
+
   function render() {
     deck.style.transform = `translateX(-${i * 100}vw)`;
     history.replaceState(null, "", `#${i + 1}`);
-    if (navLeft) navLeft.style.display = i > 0 ? '' : 'none';
-    if (navRight) navRight.style.display = i < total - 1 ? '' : 'none';
+    leftArrow.style.display = i > 0 ? "" : "none";
+    rightArrow.style.display = i < total - 1 ? "" : "none";
   }
 
   function go(n) {
@@ -23,11 +34,15 @@
     render();
   }
 
-  if (navLeft) navLeft.addEventListener("click", () => go(i - 1));
-  if (navRight) navRight.addEventListener("click", () => go(i + 1));
-
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea")) return;
+
+    // Don't navigate if modal is open
+    const modal = document.getElementById("modal");
+    if (modal && !modal.classList.contains("hidden")) {
+      if (e.key === "Escape") modal.classList.add("hidden");
+      return;
+    }
 
     switch (e.key) {
       case "ArrowRight":
