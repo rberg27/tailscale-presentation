@@ -516,25 +516,25 @@ strong { color: var(--fg); font-weight: 600; }
   .slide { padding: 3vh 5vw; gap: 0.8rem; }
   .slide.landing { padding: 1vh 4vw 1vh; gap: 0.2rem; }
 
-  /* Landing */
+  /* Landing — stacked vertical */
   .landing-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
   }
   .hero-shot {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    order: 1;
     min-height: 0;
     height: auto;
     flex: none;
   }
-  .hero-shot > img { max-width: 55%; max-height: 35vh; }
-  .corner-tl { grid-column: 1; grid-row: 1; justify-self: start; margin-left: 0; }
-  .corner-tr { grid-column: 2; grid-row: 1; justify-self: end; }
-  .grid-footer { grid-column: 1 / -1; grid-row: 3; text-align: center; }
-  .corner-bl { grid-column: 1; grid-row: 4; justify-self: start; display: flex; }
-  .corner-br { grid-column: 2; grid-row: 4; justify-self: end; display: flex; }
+  .hero-shot > img { max-width: 55%; max-height: 30vh; }
+  .grid-footer { order: 2; text-align: center; }
+  .corner-tl { order: 3; margin-left: 0; }
+  .corner-tr { order: 4; }
+  .corner-bl { order: 5; display: flex; }
+  .corner-br { order: 6; display: flex; }
   .logo-chip { width: 100px; height: 40px; padding: 0.3rem; border-radius: 6px; }
   .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
   .landing-sub { font-size: 0.7rem; }
