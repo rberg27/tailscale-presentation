@@ -511,7 +511,7 @@ strong { color: var(--fg); font-weight: 600; }
 
 /* Mobile */
 @media (max-width: 680px) {
-  html, body { font-size: 15px; overflow-x: hidden; }
+  html, body { font-size: 15px; overflow-x: hidden; overflow-y: auto; }
 
   .slide { padding: 3vh 5vw; gap: 0.8rem; }
   .slide.landing { padding: 1vh 4vw 1vh; gap: 0.2rem; }
@@ -525,8 +525,11 @@ strong { color: var(--fg); font-weight: 600; }
   .hero-shot {
     grid-column: 1 / -1;
     grid-row: 2;
+    min-height: 0;
+    height: auto;
+    flex: none;
   }
-  .hero-shot > img { max-width: 55%; max-height: 100%; }
+  .hero-shot > img { max-width: 55%; max-height: 35vh; }
   .corner-tl { grid-column: 1; grid-row: 1; justify-self: start; margin-left: 0; }
   .corner-tr { grid-column: 2; grid-row: 1; justify-self: end; }
   .grid-footer { grid-column: 1 / -1; grid-row: 3; text-align: center; }
