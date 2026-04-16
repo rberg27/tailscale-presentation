@@ -13,4 +13,4 @@ Ethan Mollick [wired a plastic duck to GPT](https://www.oneusefulthing.org/p/get
 Each of these is a version of the same thesis: Tailscale should be the layer that makes "local" mean "anywhere I am." If you can reach your own machine, you can reach your own intelligence — and the gap between building an idea and showing it to someone disappears.
 
 ---
-All of these ideas try to answer the question "How can you make serving AI across devices as simple and reliable as localhost?"
+All of these ideas find the friction that keeps using Tailscale as simple and reliable as using localhost.
