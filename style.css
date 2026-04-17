@@ -512,41 +512,102 @@ strong { color: var(--fg); font-weight: 600; }
 /* Mobile */
 @media (max-width: 680px) {
   html, body { font-size: 15px; overflow-x: hidden; overflow-y: auto; }
-
   .slide { padding: 3vh 5vw; gap: 0.8rem; }
-  .slide.landing { padding: 1vh 4vw 1vh; gap: 0.2rem; }
 
-  /* Landing — stacked vertical */
+  /* ---- LANDING: full refactor ---- */
+  .slide.landing {
+    padding: 2vh 5vw;
+    gap: 0;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 100vh;
+  }
+  .landing-header { margin-bottom: 0.8rem; }
+  .landing-name { font-size: 2rem !important; }
+  .landing-sub { font-size: 0.7rem; }
+
   .landing-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-  }
-  .hero-shot {
-    order: 1;
-    min-height: 0;
-    height: auto;
+    gap: 0;
     flex: none;
   }
-  .hero-shot > img { max-width: 55%; max-height: 30vh; }
-  .grid-footer { order: 2; text-align: center; }
-  .corner-tl { order: 3; margin-left: 0; }
+
+  /* Hero: centered, reasonable size */
+  .hero-shot {
+    width: 100%;
+    flex: none;
+    margin-bottom: 0.3rem;
+  }
+  .hero-shot > img {
+    max-width: 60%;
+    max-height: none;
+    width: 60%;
+  }
+  .hero-caption { font-size: 0.5rem; margin-bottom: 0.5rem; }
+
+  /* Footer text right after image */
+  .grid-footer {
+    text-align: center;
+    margin-bottom: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  /* Logos: 2x2 grid */
+  .corner-tl, .corner-tr, .corner-bl, .corner-br {
+    margin-left: 0;
+  }
+  .landing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "hero"
+      "footer"
+      "logos";
+    gap: 0;
+    justify-items: center;
+  }
+  .hero-shot { grid-area: hero; }
+  .grid-footer { grid-area: footer; }
+
+  /* Wrap logos in their own visual row */
+  .corner-tl, .corner-tr, .corner-bl, .corner-br {
+    grid-area: logos;
+  }
+
+  /* Override: use flex for the whole landing-grid on mobile */
+  .landing-grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Reorder everything */
+  .hero-shot { order: 1; }
+  .grid-footer { order: 2; }
+  .corner-tl { order: 3; }
   .corner-tr { order: 4; }
   .corner-bl { order: 5; display: flex; }
   .corner-br { order: 6; display: flex; }
-  .logo-chip { width: 90vw; height: 50px; padding: 0.4rem 1.2rem; border-radius: 8px; }
-  .logo-chip img { max-height: 100%; max-width: 80%; }
-  .landing-name { font-size: clamp(1.6rem, 8vw, 2.4rem) !important; }
-  .landing-sub { font-size: 0.7rem; }
-  .landing-footer { font-size: 0.75rem; }
-  .hero-caption { font-size: 0.45rem; }
+
+  /* Logo chips: wide strips */
+  .logo-chip {
+    width: 88vw;
+    height: 48px;
+    padding: 0.35rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.3rem;
+  }
+  .logo-chip img { max-height: 100%; max-width: 70%; }
 
   .name-popup { min-width: 240px; padding: 0.8rem 1rem; }
   .popup-info strong { font-size: 0.85rem; }
   .popup-info span { font-size: 0.65rem; }
 
-  /* Slide 2 */
+  /* ---- SLIDE 2 ---- */
   .slide-2 { gap: 1.2rem; padding: 3vh 4vw; }
   .slide2-title { font-size: clamp(1.6rem, 7vw, 2.4rem) !important; }
   .two-tiles { grid-template-columns: 1fr; gap: 0.8rem; }
@@ -555,7 +616,7 @@ strong { color: var(--fg); font-weight: 600; }
   .tile h2 { font-size: 1.1rem !important; margin-bottom: 0.5rem; }
   .tile-teaser { font-size: 0.8rem; margin-bottom: 0.8rem; }
 
-  /* Slide 3 */
+  /* ---- SLIDE 3 ---- */
   .slide-3 { gap: 1rem; padding: 3vh 4vw; }
   .slide-3 h1 { font-size: clamp(1.4rem, 6vw, 2rem) !important; }
   .three-pillars { gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
@@ -569,7 +630,7 @@ strong { color: var(--fg); font-weight: 600; }
   .section-label { font-size: 0.65rem; margin-bottom: 0.6rem; }
   .future-item { font-size: 0.85rem; }
 
-  /* Modal */
+  /* ---- MODAL ---- */
   .modal-content {
     padding: 1.5rem 1.2rem;
     max-width: 95vw;
@@ -590,7 +651,7 @@ strong { color: var(--fg); font-weight: 600; }
 @media (max-width: 400px) {
   html, body { font-size: 14px; }
   .slide { padding: 2vh 3vw; }
-  .logo-chip { width: 110px; height: 55px; }
+  .logo-chip { width: 90vw; height: 42px; }
   .three-pillars { gap: 0.3rem; }
   .pillar { font-size: 0.7rem; padding: 0.3rem 0.7rem; }
 }
