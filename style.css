@@ -124,9 +124,9 @@ strong { color: var(--fg); font-weight: 600; }
 .logo-chip {
   background: #fff;
   border-radius: 12px;
-  width: 220px;
-  height: 120px;
-  padding: 1rem;
+  width: 280px;
+  height: 150px;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,8 +150,8 @@ strong { color: var(--fg); font-weight: 600; }
   cursor: pointer;
 }
 .hero-shot > img {
-  max-width: 110%;
-  max-height: 110%;
+  max-width: 130%;
+  max-height: 130%;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
