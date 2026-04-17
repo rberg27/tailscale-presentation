@@ -551,7 +551,7 @@ strong { color: var(--fg); font-weight: 600; }
   .grid-footer {
     text-align: center;
     margin-bottom: 0.8rem;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   /* Logos: 2x2 grid */
