@@ -1,6 +1,6 @@
-# No Boundaries → New Interfaces
+# Freedom From Your Laptop
 
-Intelligence is defined as being able to solve a problem without having an existing structure. AI is better at processing unstructured input (text, voice). If the structure of keyboards and monitors is no longer needed, information systems can meet people in more places. Here are 3 examples of these new interfaces just from the past week:
+I define intelligence as being able to solve a problem without having an existing structure. AI is better at processing unstructured input (text, voice). If the structure of keyboards and monitors is no longer needed, information systems can meet people in more places. Here are 3 examples of these new interfaces just from the past week:
 
 ## Coding from Your Phone Is Becoming Mainstream
 Lenny's Podcast recently featured a tech CEO who does all his work from an iPad — inspired by Jack Dorsey's mobile-first workflow. With voice mode and terminal apps, coding no longer requires a desk or a laptop. Tailscale + a terminal app is what makes this possible today.

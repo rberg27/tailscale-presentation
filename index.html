@@ -172,6 +172,7 @@
           continue;
         }
         if (line.startsWith('# ') && !line.startsWith('## ')) {
+          intro = `<h2 class="modal-title">${line.replace('# ', '')}</h2>` + intro;
           pastH1 = true;
           continue;
         }

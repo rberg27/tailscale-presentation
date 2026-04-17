@@ -456,6 +456,11 @@ strong { color: var(--fg); font-weight: 600; }
 }
 .modal-close:hover { color: var(--fg); }
 
+.modal-title {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
 .modal-intro {
   font-size: 0.95rem;
   color: var(--fg-dim);
