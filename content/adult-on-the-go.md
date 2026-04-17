@@ -1,4 +1,6 @@
-# Adult In The Room → Adult On The Go
+# Staying In The Loop
+
+Judgement and taste are the premium. As long as humans are the consumers, knowing your target customer and standing out will always be valuable. The question is: how do you provide that judgement more often — without being chained to your desk?
 
 ## Judgement and Taste Are the Premium
 As long as humans are the consumers, judgement and taste will be a premium. While you can argue that AI will get better at building reliable code or reliable models, knowing your target customer and standing out will always be valuable. Being the ["Adult In The Room"](https://tailscale.com/blog/adult-in-the-room) is about providing that judgement and taste as much as it is about providing security and stability.
